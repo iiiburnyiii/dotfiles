@@ -20,6 +20,7 @@ fish_add_path -g /usr/local/sbin
 fish_add_path -g $PYENV_ROOT/bin
 fish_add_path -g /opt/homebrew/bin
 fish_add_path -g /opt/homebrew/sbin
+fish_add_path -g /System/Volumes/Data/Applications/Obsidian.app/Contents/MacOS/Obsidian
 
 # Fisher
 set -g fisher_path ~/.config/fish/fisher
@@ -31,26 +32,8 @@ for file in $fisher_path/conf.d/*.fish
     builtin source $file 2> /dev/null
 end
 
-# Init jenv
-# status --is-interactive
-# source (jenv init -|psub)
-
 # starship
 starship init fish | source
-
-# Completions
-# if test $TERM_PROGRAM = iTerm.app
-#     test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell_integration.fish
-# end
-# kitty + complete setup fish | source
-# sync_theme
-
-# aliases
-# alias ssh="kitty +kitten ssh"
-# alias pt="java -Dfile.encoding=UTF-8 -jar $HOME/PowerTunnel/PowerTunnel.jar --console --disable-tray"
-
-# Added by Antigravity
-fish_add_path $HOME/.antigravity/antigravity/bin
 
 # Mole shell completion
 set -l output (mole completion fish 2>/dev/null); and echo "$output" | source
