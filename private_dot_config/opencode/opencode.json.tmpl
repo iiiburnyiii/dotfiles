@@ -1,24 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "permission": {
-{{- if eq .profile "work" }}
-    "*": "ask",
-    "read": "allow",
-    "grep": "allow",
-    "glob": "allow",
-    "list": "allow",
-{{- if .work_opencode_allow_task }}
-    "task": "allow",
-{{- end }}
-{{- if .work_opencode_allow_question }}
-    "question": "allow",
-{{- end }}
-{{- if .work_opencode_allow_webfetch }}
-    "webfetch": "allow",
-{{- end }}
-    "todowrite": "allow",
-    "todoread": "allow"
-{{- else }}
     "*": "ask",
     "read": "allow",
     "grep": "allow",
@@ -28,17 +10,12 @@
     "question": "allow",
     "todowrite": "allow",
     "todoread": "allow"
-{{- end }}
   },
   "model": "anthropic/claude-sonnet-4-6",
   "small_model": "ollama/qwen3.5:35b-a3b-32k",
   "default_agent": "plan",
   "share": "manual",
   "autoupdate": "notify",
-{{- if eq .profile "work" }}
-  "plugin": {{ .work_opencode_plugins_json | fromJson | toPrettyJson }},
-{{- end }}
-{{- if eq .profile "personal" }}
   "agent": {
     "plan": {
       "model": "anthropic/claude-opus-4-6",
@@ -54,7 +31,6 @@
       }
     }
   },
-{{- end }}
   "provider": {
     "ollama": {
       "options": {

@@ -1,8 +1,3 @@
 [[ssh-keys]]
-{{- if eq .profile "work" }}
-item = {{ .work_1password_ssh_item | abortEmpty "work_1password_ssh_item is empty in chezmoi data" | quote }}
-vault = {{ .work_1password_ssh_vault | abortEmpty "work_1password_ssh_vault is empty in chezmoi data" | quote }}
-{{- else }}
-item = {{ .personal_1password_ssh_item | abortEmpty "personal_1password_ssh_item is empty in chezmoi data" | quote }}
-vault = {{ .personal_1password_ssh_vault | abortEmpty "personal_1password_ssh_vault is empty in chezmoi data" | quote }}
-{{- end }}
+item = {{ .onepassword_ssh_item }}
+vault = {{ .onepassword_ssh_vault }}

@@ -1,13 +1,7 @@
 [user]
-	{{- if eq .profile "work" }}
-	name = {{ .work_git_name | abortEmpty "work_git_name is empty in chezmoi data" }}
-	email = {{ .work_git_email | abortEmpty "work_git_email is empty in chezmoi data" }}
-	signingkey = {{ .work_git_signingkey | abortEmpty "work_git_signingkey is empty in chezmoi data" }}
-	{{- else }}
-	name = {{ .personal_git_name | abortEmpty "personal_git_name is empty in chezmoi data" }}
-	email = {{ .personal_git_email | abortEmpty "personal_git_email is empty in chezmoi data" }}
-	signingkey = {{ .personal_git_signingkey | abortEmpty "personal_git_signingkey is empty in chezmoi data" }}
-	{{- end }}
+	name = {{ .git_name }}
+	email = {{ .git_email }}
+	signingkey = {{ .git_signingkey }}
 [core]
 	autocrlf = input
 	safecrlf = true
