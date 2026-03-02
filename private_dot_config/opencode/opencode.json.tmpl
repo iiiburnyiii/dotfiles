@@ -1,0 +1,102 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+{{- if eq .profile "work" }}
+    "*": "ask",
+    "read": "allow",
+    "grep": "allow",
+    "glob": "allow",
+    "list": "allow",
+{{- if .work_opencode_allow_task }}
+    "task": "allow",
+{{- end }}
+{{- if .work_opencode_allow_question }}
+    "question": "allow",
+{{- end }}
+{{- if .work_opencode_allow_webfetch }}
+    "webfetch": "allow",
+{{- end }}
+    "todowrite": "allow",
+    "todoread": "allow"
+{{- else }}
+    "*": "ask",
+    "read": "allow",
+    "grep": "allow",
+    "glob": "allow",
+    "list": "allow",
+    "task": "allow",
+    "question": "allow",
+    "todowrite": "allow",
+    "todoread": "allow"
+{{- end }}
+  },
+  "model": "anthropic/claude-sonnet-4-6",
+  "small_model": "ollama/qwen3.5:35b-a3b-32k",
+  "default_agent": "plan",
+  "share": "manual",
+  "autoupdate": "notify",
+{{- if eq .profile "work" }}
+  "plugin": {{ .work_opencode_plugins_json | fromJson | toPrettyJson }},
+{{- end }}
+{{- if eq .profile "personal" }}
+  "agent": {
+    "plan": {
+      "model": "anthropic/claude-opus-4-6",
+      "permission": {
+        "webfetch": "allow"
+      }
+    },
+    "build": {
+      "model": "anthropic/claude-sonnet-4-6",
+      "permission": {
+        "edit": "allow",
+        "write": "ask"
+      }
+    }
+  },
+{{- end }}
+  "provider": {
+    "ollama": {
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "Qwen2.5-Coder:3b-32k": {
+          "name": "Qwen 2.5 Coder 3B 32K (Local)",
+          "limit": {
+            "context": 32768,
+            "output": 8192
+          }
+        },
+        "qwen3.5:35b-a3b-32k": {
+          "name": "Qwen 3.5 35B A3B 32K (Local)",
+          "limit": {
+            "context": 32768,
+            "output": 8192
+          }
+        },
+        "gemma3:12b-32k": {
+          "name": "Gemma 3 12B 32K (Local)",
+          "limit": {
+            "context": 32768,
+            "output": 8192
+          }
+        }
+      }
+    }
+  },
+  "watcher": {
+    "ignore": [
+      "**/node_modules/**",
+      "**/.git/**",
+      "**/dist/**",
+      "**/.next/**",
+      "**/build/**"
+    ]
+  },
+  "compaction": {
+    "auto": true,
+    "prune": true,
+    "reserved": 10000
+  }
+}

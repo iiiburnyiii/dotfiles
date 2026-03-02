@@ -1,0 +1,9 @@
+window-padding-x = 16
+window-padding-y = 16
+
+font-family = Fira Code Retina Nerd Font Complete Mono
+theme = dark:Apple System Colors,light:Apple System Colors Light
+
+macos-icon = retro
+
+shell-integration-features = no-cursor

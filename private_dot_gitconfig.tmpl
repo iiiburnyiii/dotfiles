@@ -1,0 +1,35 @@
+[user]
+	{{- if eq .profile "work" }}
+	name = {{ .work_git_name | abortEmpty "work_git_name is empty in chezmoi data" }}
+	email = {{ .work_git_email | abortEmpty "work_git_email is empty in chezmoi data" }}
+	signingkey = {{ .work_git_signingkey | abortEmpty "work_git_signingkey is empty in chezmoi data" }}
+	{{- else }}
+	name = {{ .personal_git_name | abortEmpty "personal_git_name is empty in chezmoi data" }}
+	email = {{ .personal_git_email | abortEmpty "personal_git_email is empty in chezmoi data" }}
+	signingkey = {{ .personal_git_signingkey | abortEmpty "personal_git_signingkey is empty in chezmoi data" }}
+	{{- end }}
+[core]
+	autocrlf = input
+	safecrlf = true
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[rebase]
+	autosquash = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
+	sshsign = false

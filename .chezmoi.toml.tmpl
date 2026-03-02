@@ -1,0 +1,20 @@
+[data]
+{{- $profile := promptChoiceOnce . "profile" "Profile" (list "personal" "work") }}
+    profile = {{ $profile | quote }}
+{{- if eq $profile "work" }}
+    work_git_email = {{ promptStringOnce . "work_git_email" "Work git email" | quote }}
+    work_git_signingkey = {{ promptStringOnce . "work_git_signingkey" "Work git signing key" | quote }}
+    work_opencode_plugins_json = {{ promptStringOnce . "work_opencode_plugins_json" "Work opencode plugins JSON array (e.g. [])" | quote }}
+    work_opencode_allow_task = {{ promptBoolOnce . "work_opencode_allow_task" "Allow opencode task tool for work profile?" }}
+    work_opencode_allow_question = {{ promptBoolOnce . "work_opencode_allow_question" "Allow opencode question tool for work profile?" }}
+    work_opencode_allow_webfetch = {{ promptBoolOnce . "work_opencode_allow_webfetch" "Allow opencode webfetch tool for work profile?" }}
+    work_git_name = {{ promptStringOnce . "work_git_name" "Work git user.name" | quote }}
+    work_1password_ssh_item = {{ promptStringOnce . "work_1password_ssh_item" "Work 1Password SSH item name" | quote }}
+    work_1password_ssh_vault = {{ promptStringOnce . "work_1password_ssh_vault" "Work 1Password SSH vault name" | quote }}
+{{- else }}
+    personal_git_name = {{ promptStringOnce . "personal_git_name" "Personal git user.name" | quote }}
+    personal_git_email = {{ promptStringOnce . "personal_git_email" "Personal git email" | quote }}
+    personal_git_signingkey = {{ promptStringOnce . "personal_git_signingkey" "Personal git signing key" | quote }}
+    personal_1password_ssh_item = {{ promptStringOnce . "personal_1password_ssh_item" "Personal 1Password SSH item name" | quote }}
+    personal_1password_ssh_vault = {{ promptStringOnce . "personal_1password_ssh_vault" "Personal 1Password SSH vault name" | quote }}
+{{- end }}

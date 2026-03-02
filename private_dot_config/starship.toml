@@ -1,0 +1,20 @@
+# https://starship.rs/config/#prompt
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]      # The name of the module we are configuring is "character"
+success_symbol = "[➜](green)"
+error_symbol = "[✖](red)"
+
+[cmd_duration]
+min_time = 1_000
+# $duration – The command duration (e.g. "15s")
+# $style    – The default style of the module (e.g. "bold yellow")
+format = "took [$duration]($style) "
+show_milliseconds = true
+
+[python]
+# Only use the `python3` binary to get the version.
+python_binary = "python3"
+
+[java]
+#version = "$(jenv local)"
