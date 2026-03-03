@@ -7,3 +7,5 @@ theme = dark:Adventure,light:Alabaster
 macos-icon = retro
 
 shell-integration-features = no-cursor
+
+copy-on-select = clipboard
