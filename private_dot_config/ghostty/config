@@ -2,7 +2,7 @@ window-padding-x = 16
 window-padding-y = 16
 
 font-family = Fira Code Retina Nerd Font Complete Mono
-theme = dark:3024 Night,light:3024 Day
+theme = dark:Adventure,light:Alabaster
 
 macos-icon = retro
 
