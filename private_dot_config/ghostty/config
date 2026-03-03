@@ -5,7 +5,8 @@ font-family = Fira Code Retina Nerd Font Complete Mono
 theme = dark:Adventure,light:Alabaster
 
 macos-icon = retro
+macos-option-as-alt = true
 
 shell-integration-features = no-cursor
 
-copy-on-select = clipboard
+copy-on-select = true
