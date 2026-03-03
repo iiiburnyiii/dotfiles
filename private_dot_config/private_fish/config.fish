@@ -2,7 +2,7 @@
 
 # VARS
 set -g EDITOR nvim
-set -g VISUAL fleet
+set -g VISUAL zed
 set -g QEMU_AUDIO_DRV none
 set -g RUSTUP_HOME $HOME/.rustup
 set -g CARGO_HOME $HOME/.cargo
