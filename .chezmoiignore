@@ -1,2 +1,4 @@
 **/*.swp
 private_dot_config/private_fish/fish_variables
+private_dot_config/private_fish/conf.d/work.fish
+private_dot_config/opencode/opencode.work.json

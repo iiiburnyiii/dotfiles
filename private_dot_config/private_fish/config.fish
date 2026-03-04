@@ -4,8 +4,6 @@
 set -g EDITOR nvim
 set -g VISUAL zed
 set -g QEMU_AUDIO_DRV none
-set -g RUSTUP_HOME $HOME/.rustup
-set -g CARGO_HOME $HOME/.cargo
 set -g ANDROID_HOME /Users/Shared/Android/sdk
 
 # PATH
@@ -13,7 +11,6 @@ fish_add_path -g $HOME/go/bin
 fish_add_path -g $HOME/.jenv/bin
 fish_add_path -g $ANDROID_HOME/platform-tools
 fish_add_path -g $ANDROID_HOME/emulator
-fish_add_path -g $CARGO_HOME/bin
 fish_add_path -g /Applications/Postgres.app/Contents/Versions/latest/bin
 fish_add_path -g /usr/local/opt/qt/bin
 fish_add_path -g /usr/local/sbin
