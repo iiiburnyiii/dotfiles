@@ -2,3 +2,5 @@
 private_dot_config/private_fish/fish_variables
 private_dot_config/private_fish/conf.d/work.fish
 private_dot_config/opencode/opencode.work.json
+private_dot_config/zed/conversations
+private_dot_config/zed/prompts

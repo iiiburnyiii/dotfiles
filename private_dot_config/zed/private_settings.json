@@ -7,17 +7,18 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "buffer_line_height": "comfortable",
   "use_smartcase_search": true,
   "edit_predictions": {
     "provider": "ollama",
     "ollama": {
-      "model": "Qwen2.5-Coder:3B"
-    }
+      "model": "Qwen2.5-Coder:3b-32k",
+    },
   },
-  "preferred_line_length": 60,
+  "preferred_line_length": 100,
   "show_wrap_guides": true,
   "toolbar": {
-    "code_actions": false,
+    "code_actions": true,
   },
   "minimap": {
     "show": "never",
@@ -27,9 +28,12 @@
       "milliseconds": 1000,
     },
   },
-  "soft_wrap": "prefer_line",
-  "buffer_font_family": "JetBrains Mono",
+  "soft_wrap": "preferred_line_length",
+  "buffer_font_family": "Fira Code",
   "ui_font_family": ".ZedSans",
+  "buffer_font_features": {
+    "calt": true
+  },
   "tabs": {
     "git_status": false,
     "file_icons": false,
@@ -46,7 +50,7 @@
     "favorite_models": [],
     "inline_assistant_model": {
       "provider": "ollama",
-      "model": "gemma3:12b",
+      "model": "qwen3.5:35b-a3b-32k",
     },
     "model_parameters": [],
   },
@@ -57,7 +61,7 @@
   "buffer_font_size": 15,
   "theme": {
     "mode": "system",
-    "light": "Ayu Light",
-    "dark": "Ayu Dark"
+    "light": "Alabaster",
+    "dark": "Alabaster Dark",
   },
 }
