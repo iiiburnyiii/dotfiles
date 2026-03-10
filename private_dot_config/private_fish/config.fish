@@ -17,7 +17,7 @@ fish_add_path -g /usr/local/sbin
 fish_add_path -g $PYENV_ROOT/bin
 fish_add_path -g /opt/homebrew/bin
 fish_add_path -g /opt/homebrew/sbin
-fish_add_path -g /System/Volumes/Data/Applications/Obsidian.app/Contents/MacOS/Obsidian
+fish_add_path -g /Applications/Obsidian.app/Contents/MacOS
 
 # Fisher
 set -g fisher_path ~/.config/fish/fisher
